@@ -1,105 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Achadinhos Shopee | Ofertas e Produtos</title>
 
-    <meta name="description" content="Encontre achadinhos e produtos selecionados da Shopee em um só lugar.">
-
-    <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos, produtos baratos, eletrônicos, informática, som automotivo, ferramentas">
-
+    <meta name="description" content="Encontre produtos e ofertas selecionadas da Shopee em diversas categorias.">
+    <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos Shopee, produtos Shopee, promoções">
     <meta name="robots" content="index, follow">
 
-
     <style>
-
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
 
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f6f6f6;
-            color: #222;
+            background: #f7f7f7;
+            color: #333;
         }
 
+        a {
+            text-decoration: none;
+        }
 
-        /* =========================
-           HEADER
-        ========================= */
-
+        /* HEADER */
         header {
-            background: #ee4d2d;
-            color: #fff;
-            padding: 18px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            background: #ee4d2d;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
-
-        .header-content {
+        .header-inner {
             max-width: 1150px;
             margin: auto;
+            min-height: 69px;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
         }
 
-
         .logo {
-            font-size: 25px;
+            color: #fff;
+            font-size: 22px;
             font-weight: 800;
             white-space: nowrap;
         }
 
-
         nav {
             display: flex;
-            gap: 20px;
+            align-items: center;
+            gap: 8px;
         }
-
 
         nav a {
             color: #fff;
-            text-decoration: none;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 13px;
+            border-radius: 6px;
+            transition: 0.2s;
         }
-
 
         nav a:hover {
-            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.15);
         }
 
-
-        /* =========================
-           BARRA DE CATEGORIAS
-        ========================= */
-
+        /* CATEGORY BAR */
         .category-bar {
             position: sticky;
             top: 69px;
             z-index: 999;
             background: #fff;
             border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-
 
         .category-bar-inner {
             max-width: 1150px;
@@ -111,18 +97,6 @@
             overflow-x: auto;
             scrollbar-width: thin;
         }
-
-
-        .category-bar-inner::-webkit-scrollbar {
-            height: 5px;
-        }
-
-
-        .category-bar-inner::-webkit-scrollbar-thumb {
-            background: #ddd;
-            border-radius: 10px;
-        }
-
 
         .category-button {
             flex: 0 0 auto;
@@ -138,12 +112,10 @@
             transition: 0.2s;
         }
 
-
         .category-button:hover {
             border-color: #ee4d2d;
             color: #ee4d2d;
         }
-
 
         .category-button.active {
             background: #ee4d2d;
@@ -151,115 +123,83 @@
             border-color: #ee4d2d;
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
-
+        /* HERO */
         .hero {
             background: linear-gradient(135deg, #ee4d2d, #ff733f);
             color: #fff;
+            padding: 65px 20px;
             text-align: center;
-            padding: 75px 20px;
         }
 
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 38px;
             margin-bottom: 15px;
         }
 
-
         .hero p {
-            font-size: 19px;
-            max-width: 700px;
-            margin: auto;
+            font-size: 18px;
             line-height: 1.6;
         }
 
-
-        /* =========================
-           CONTAINER
-        ========================= */
-
+        /* GENERAL */
         .container {
             max-width: 1150px;
             margin: auto;
             padding: 45px 20px;
         }
 
-
         .section-title {
             text-align: center;
-            margin-bottom: 12px;
             font-size: 30px;
+            color: #222;
+            margin-bottom: 10px;
         }
-
 
         .section-subtitle {
             text-align: center;
-            color: #666;
-            margin-bottom: 35px;
-            font-size: 16px;
+            color: #777;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
 
-
-        /* =========================
-           PRODUTOS
-        ========================= */
-
-        .product-grid {
+        /* PRODUCTS */
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
-
         .product-card {
             background: #fff;
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
+            transition: 0.25s;
         }
-
 
         .product-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.13);
         }
-
 
         .product-card.hidden {
             display: none;
         }
 
-
-        /* =========================
-           IMAGEM
-        ========================= */
-
-        .product-image {
+        .product-card img {
             width: 100%;
             aspect-ratio: 4 / 3;
-            background: #f7f7f7;
-            overflow: hidden;
-        }
-
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
             display: block;
+            background: #f1f1f1;
         }
-
-
-        /* =========================
-           INFORMAÇÕES
-        ========================= */
 
         .product-info {
             padding: 17px;
@@ -268,758 +208,488 @@
             flex: 1;
         }
 
-
         .product-category {
             display: inline-block;
             width: fit-content;
             background: #fff0ec;
             color: #ee4d2d;
-            padding: 6px 10px;
+            padding: 5px 9px;
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
             margin-bottom: 10px;
         }
 
-
-        .product-title {
-            font-size: 18px;
-            line-height: 1.35;
-            margin-bottom: 10px;
+        .product-info h3 {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #222;
+            margin-bottom: 9px;
         }
-
 
         .product-description {
-            color: #666;
-            line-height: 1.5;
+            color: #777;
             font-size: 13px;
-            margin-bottom: 13px;
+            line-height: 1.5;
+            margin-bottom: 12px;
             min-height: 58px;
         }
 
-
-        .price-label {
-            color: #777;
-            font-size: 12px;
-            margin-bottom: 3px;
-        }
-
-
         .price {
-            font-size: 24px;
-            font-weight: 800;
             color: #ee4d2d;
+            font-size: 20px;
+            font-weight: 800;
             margin-bottom: 14px;
         }
-
 
         .buy-btn {
             display: block;
             width: 100%;
-            padding: 12px 15px;
-            border-radius: 9px;
+            text-align: center;
             background: #ee4d2d;
             color: #fff;
-            text-align: center;
-            text-decoration: none;
+            padding: 11px 12px;
+            border-radius: 7px;
+            font-size: 14px;
             font-weight: 800;
-            transition: background 0.2s, transform 0.2s;
+            transition: 0.2s;
             margin-top: auto;
         }
 
-
         .buy-btn:hover {
-            background: #d84325;
-            transform: translateY(-1px);
+            background: #d94326;
         }
 
-
-        /* =========================
-           SOBRE
-        ========================= */
-
+        /* ABOUT */
         .about {
             background: #fff;
-            border-radius: 15px;
-            padding: 35px;
-            line-height: 1.8;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
         }
 
-
-        .about p + p {
-            margin-top: 15px;
+        .about h2 {
+            color: #ee4d2d;
+            margin-bottom: 15px;
         }
 
+        .about p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
 
-        /* =========================
-           FOOTER
-        ========================= */
-
+        /* FOOTER */
         footer {
             background: #222;
-            color: #ddd;
+            color: #bbb;
             text-align: center;
             padding: 30px 20px;
-            line-height: 1.7;
+            margin-top: 30px;
         }
 
-
-        .disclosure {
+        footer p {
             font-size: 13px;
-            color: #aaa;
-            margin-top: 12px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.6;
         }
 
-
-        /* =========================
-           CELULAR
-        ========================= */
-
+        /* MOBILE */
         @media (max-width: 700px) {
-
-            header {
-                padding: 15px 12px;
-            }
-
-
-            .header-content {
+            .header-inner {
                 flex-direction: column;
-                gap: 12px;
+                justify-content: center;
+                gap: 8px;
+                padding: 12px 15px;
             }
 
+            .logo {
+                font-size: 20px;
+            }
 
             nav {
-                gap: 14px;
-                flex-wrap: wrap;
+                width: 100%;
                 justify-content: center;
             }
 
-
-            .logo {
-                font-size: 22px;
+            nav a {
+                font-size: 13px;
+                padding: 8px 10px;
             }
-
 
             .category-bar {
                 top: 101px;
             }
 
-
             .category-bar-inner {
                 padding: 9px 12px;
-                gap: 7px;
             }
-
-
-            .category-button {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-
 
             .hero {
-                padding: 60px 20px;
+                padding: 45px 18px;
             }
-
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 29px;
             }
-
 
             .hero p {
-                font-size: 17px;
+                font-size: 15px;
             }
-
 
             .container {
-                padding: 35px 15px;
+                padding: 35px 12px;
             }
-
 
             .section-title {
-                font-size: 26px;
+                font-size: 25px;
             }
 
-
-            .product-grid {
+            .products-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 12px;
             }
 
-
             .product-info {
-                padding: 13px;
+                padding: 12px;
             }
 
-
-            .product-title {
-                font-size: 16px;
+            .product-info h3 {
+                font-size: 14px;
             }
-
 
             .product-description {
                 font-size: 12px;
+                min-height: 60px;
             }
-
 
             .price {
-                font-size: 20px;
+                font-size: 16px;
             }
-
 
             .buy-btn {
-                font-size: 13px;
-                padding: 11px 8px;
+                font-size: 12px;
+                padding: 10px 7px;
             }
-
 
             .about {
-                padding: 25px 20px;
+                padding: 22px;
             }
-
         }
-
 
         @media (max-width: 380px) {
-
-            .product-grid {
+            .products-grid {
                 grid-template-columns: 1fr;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         HEADER
-    ========================= -->
-
+    <!-- HEADER -->
     <header>
-
-        <div class="header-content">
-
-            <div class="logo">
-                🛍️ Achadinhos Shopee
-            </div>
-
+        <div class="header-inner">
+            <a href="#inicio" class="logo">🛍️ Achadinhos Shopee</a>
 
             <nav>
-
-                <a href="#inicio">
-                    Início
-                </a>
-
-
-                <a href="#ofertas" id="navProdutos">
-                    Produtos
-                </a>
-
-
-                <a href="#sobre">
-                    Sobre
-                </a>
-
+                <a href="#inicio">Início</a>
+                <a href="#ofertas" id="navProdutos">Produtos</a>
+                <a href="#sobre">Sobre</a>
             </nav>
-
         </div>
-
     </header>
 
-
-    <!-- =========================
-         CATEGORIAS NO TOPO
-    ========================= -->
-
+    <!-- CATEGORIAS -->
     <div class="category-bar">
-
         <div class="category-bar-inner">
 
-
-            <button
-                class="category-button active"
-                data-filter="todos"
-            >
-                🛍️ Todos
+            <button class="category-button active" data-filter="todos">
+                Todos
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="eletronicos"
-            >
+            <button class="category-button" data-filter="eletronicos">
                 📱 Eletrônicos
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="informatica"
-            >
+            <button class="category-button" data-filter="informatica">
                 🖥️ Informática
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="celulares"
-            >
-                📲 Celulares
+            <button class="category-button" data-filter="celulares">
+                📱 Celulares
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="som-automotivo"
-            >
+            <button class="category-button" data-filter="som-automotivo">
                 🔊 Som Automotivo
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="automotivo"
-            >
+            <button class="category-button" data-filter="automotivo">
                 🚗 Automotivo
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="motos"
-            >
+            <button class="category-button" data-filter="motos">
                 🏍️ Motos
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="ferramentas"
-            >
+            <button class="category-button" data-filter="ferramentas">
                 🔧 Ferramentas
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="casa"
-            >
+            <button class="category-button" data-filter="casa">
                 🏠 Casa
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="cozinha"
-            >
+            <button class="category-button" data-filter="cozinha">
                 🍳 Cozinha
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="organizacao"
-            >
-                🧹 Organização
+            <button class="category-button" data-filter="organizacao">
+                📦 Organização
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="moda"
-            >
+            <button class="category-button" data-filter="moda">
                 👕 Moda
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="beleza"
-            >
+            <button class="category-button" data-filter="beleza">
                 💄 Beleza
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="infantil"
-            >
+            <button class="category-button" data-filter="infantil">
                 👶 Infantil
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="brinquedos"
-            >
+            <button class="category-button" data-filter="brinquedos">
                 🧸 Brinquedos
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="games"
-            >
+            <button class="category-button" data-filter="games">
                 🎮 Games
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="iluminacao"
-            >
+            <button class="category-button" data-filter="iluminacao">
                 💡 Iluminação
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="construcao"
-            >
-                🏗️ Construção
+            <button class="category-button" data-filter="construcao">
+                🧱 Construção
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="pet"
-            >
+            <button class="category-button" data-filter="pet">
                 🐶 Pet
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="esportes"
-            >
+            <button class="category-button" data-filter="esportes">
                 ⚽ Esportes
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="pesca"
-            >
+            <button class="category-button" data-filter="pesca">
                 🎣 Pesca
             </button>
 
-
-            <button
-                class="category-button"
-                data-filter="acessorios"
-            >
-                🎒 Acessórios
+            <button class="category-button" data-filter="acessorios">
+                🧢 Acessórios
             </button>
 
-
         </div>
-
     </div>
 
-
-    <!-- =========================
-         INÍCIO
-    ========================= -->
-
+    <!-- HERO -->
     <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Os melhores achadinhos da Shopee 🛍️</h1>
 
-        <h1>
-            Os melhores achadinhos em um só lugar
-        </h1>
-
-
-        <p>
-            Produtos selecionados da Shopee para você encontrar
-            o que procura de forma simples e rápida.
-        </p>
-
+            <p>
+                Produtos selecionados, ofertas e achadinhos de diversas categorias
+                para você encontrar tudo em um só lugar.
+            </p>
+        </div>
     </section>
 
-
-    <!-- =========================
-         PRODUTOS
-    ========================= -->
-
+    <!-- PRODUTOS -->
     <section class="container" id="ofertas">
 
-        <h2 class="section-title">
-            🛍️ Produtos
-        </h2>
-
+        <h2 class="section-title">🛒 Produtos em destaque</h2>
 
         <p class="section-subtitle" id="productSubtitle">
-
             Confira os produtos selecionados e acesse diretamente a Shopee.
-
         </p>
 
+        <div class="products-grid">
 
-        <div class="product-grid">
+            <!-- PRODUTO 1 - SMARTWATCH -->
+            <div class="product-card" data-category="eletronicos">
 
-
-            <!-- =========================
-                 SMARTWATCH
-                 ELETRÔNICOS
-            ========================= -->
-
-            <article
-                class="product-card"
-                data-category="eletronicos"
-            >
-
-
-                <div class="product-image">
-
-                    <img
-                        src="smartwatch.jpeg"
-                        alt="Smartwatch W10 MINI 38mm 45mm 49mm"
-                    >
-
-                </div>
-
+                <img
+                    src="smartwatch.jpeg"
+                    alt="Smartwatch W10 MINI 38mm 45mm 49mm"
+                >
 
                 <div class="product-info">
 
-
                     <span class="product-category">
-
                         📱 Eletrônicos
-
                     </span>
 
-
-                    <h3 class="product-title">
-
+                    <h3>
                         Smartwatch W10 MINI 38mm 45mm 49mm
-                        Pulseira De Silicone E Metal Original
-
                     </h3>
 
-
                     <p class="product-description">
-
-                        Smartwatch W10 MINI disponível nos tamanhos
-                        38mm, 45mm e 49mm, com opções de pulseira
-                        de silicone e metal.
-
+                        Smartwatch W10 MINI disponível em 38mm, 45mm e 49mm,
+                        com opções de pulseira de silicone e metal.
                     </p>
 
-
-                    <div class="price-label">
-
-                        Preço
-
-                    </div>
-
-
                     <div class="price">
-
                         R$ 35,00 - R$ 75,00
-
                     </div>
-
 
                     <a
-                        class="buy-btn"
                         href="https://s.shopee.com.br/2qUlrHeKfJ?share_channel_code=1"
                         target="_blank"
-                        rel="nofollow sponsored noopener"
+                        rel="noopener noreferrer"
+                        class="buy-btn"
                     >
-
-                        🛒 Ver produto na Shopee
-
+                        🛒 Comprar na Shopee
                     </a>
 
-
                 </div>
+            </div>
 
-            </article>
+            <!-- PRODUTO 2 - MESA PARA NOTEBOOK -->
+            <div class="product-card" data-category="informatica">
 
-
-            <!-- =========================
-                 MESA PARA NOTEBOOK
-                 INFORMÁTICA
-            ========================= -->
-
-            <article
-                class="product-card"
-                data-category="informatica"
-            >
-
-
-                <div class="product-image">
-
-                    <img
-                        src="mesapc.jpeg"
-                        alt="Mesa Portátil para Notebook Home Office"
-                    >
-
-                </div>
-
+                <img
+                    src="mesapc.jpeg"
+                    alt="Mesa Portátil para Notebook Home Office"
+                >
 
                 <div class="product-info">
 
-
                     <span class="product-category">
-
                         🖥️ Informática
-
                     </span>
 
-
-                    <h3 class="product-title">
-
+                    <h3>
                         Mesa Portátil para Notebook Home Office
-
                     </h3>
 
-
                     <p class="product-description">
-
-                        Mesa portátil para notebook, ideal para
-                        home office, estudos e uso do computador.
-
+                        Mesa portátil para notebook, ideal para home office,
+                        estudos e uso do computador.
                     </p>
 
-
-                    <div class="price-label">
-
-                        Preço
-
-                    </div>
-
-
                     <div class="price">
-
                         R$ 39,98
-
                     </div>
-
 
                     <a
-                        class="buy-btn"
                         href="https://s.shopee.com.br/4LJZhZ7gWi?share_channel_code=1"
                         target="_blank"
-                        rel="nofollow sponsored noopener"
+                        rel="noopener noreferrer"
+                        class="buy-btn"
                     >
-
-                        🛒 Ver produto na Shopee
-
+                        🛒 Comprar na Shopee
                     </a>
 
+                </div>
+            </div>
+
+            <!-- PRODUTO 3 - IPHONE 14 -->
+            <div class="product-card" data-category="celulares">
+
+                <img
+                    src="iphone14.jpeg"
+                    alt="iPhone 14 14 Pro 14 Pro Max"
+                >
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        📱 Celulares
+                    </span>
+
+                    <h3>
+                        iPhone 14 / 14 Pro / 14 Pro Max 128GB / 256GB
+                    </h3>
+
+                    <p class="product-description">
+                        iPhone 14, 14 Pro e 14 Pro Max com opções de
+                        armazenamento de 128GB e 256GB.
+                    </p>
+
+                    <div class="price">
+                        R$ 2.450,00 - R$ 4.150,00
+                    </div>
+
+                    <a
+                        href="https://s.shopee.com.br/4B09XyWv1z?share_channel_code=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="buy-btn"
+                    >
+                        🛒 Comprar na Shopee
+                    </a>
 
                 </div>
-
-            </article>
-
+            </div>
 
         </div>
-
     </section>
 
-
-    <!-- =========================
-         SOBRE
-    ========================= -->
-
-    <section
-        class="container"
-        id="sobre"
-    >
-
-
-        <h2 class="section-title">
-
-            ℹ️ Sobre o site
-
-        </h2>
-
+    <!-- SOBRE -->
+    <section class="container" id="sobre">
 
         <div class="about">
 
+            <h2>Sobre o Achadinhos Shopee</h2>
 
             <p>
-
-                Este site reúne produtos e achadinhos encontrados
-                na Shopee para facilitar a busca por bons produtos e preços.
-
+                O Achadinhos Shopee reúne produtos e ofertas selecionadas
+                disponíveis na Shopee em diversas categorias.
             </p>
-
 
             <p>
-
-                Os produtos são apresentados com fotos, informações,
-                preços e links para a página correspondente na Shopee.
-
+                Navegue pelas categorias, encontre o produto que procura
+                e acesse diretamente a Shopee para conferir os detalhes
+                da oferta.
             </p>
-
 
             <p>
-
-                Nosso objetivo é reunir achadinhos de diferentes
-                categorias em um único lugar.
-
+                Alguns links deste site são links de afiliado. Podemos receber
+                uma comissão quando uma compra é realizada através de nossos
+                links, sem custo adicional para você.
             </p>
-
 
         </div>
 
     </section>
 
-
-    <!-- =========================
-         RODAPÉ
-    ========================= -->
-
+    <!-- FOOTER -->
     <footer>
 
+        <p>
+            © 2026 Achadinhos Shopee - Todos os direitos reservados.
+        </p>
 
         <p>
-
-            © 2026 Achadinhos Shopee — Todos os direitos reservados.
-
+            Este site participa de programas de afiliados e pode receber
+            comissão por compras realizadas através dos links.
         </p>
-
-
-        <p class="disclosure">
-
-            Este site pode participar do programa de afiliados da Shopee.
-            Alguns links podem gerar comissão ao site quando uma compra
-            é realizada, sem custo adicional para o comprador.
-
-        </p>
-
 
     </footer>
 
-
-    <!-- =========================
-         FILTRO DAS CATEGORIAS
-    ========================= -->
-
+    <!-- JAVASCRIPT -->
     <script>
 
         const categoryButtons =
             document.querySelectorAll(".category-button");
 
-
         const productCards =
             document.querySelectorAll(".product-card");
 
-
         const productSubtitle =
             document.getElementById("productSubtitle");
-
 
         const navProdutos =
             document.getElementById("navProdutos");
@@ -1027,13 +697,10 @@
 
         function filterProducts(filter) {
 
-
             productCards.forEach(function(card) {
-
 
                 const category =
                     card.dataset.category;
-
 
                 if (
                     filter === "todos" ||
@@ -1053,13 +720,9 @@
 
             categoryButtons.forEach(function(button) {
 
-
                 button.classList.toggle(
-
                     "active",
-
                     button.dataset.filter === filter
-
                 );
 
             });
@@ -1067,13 +730,10 @@
 
             if (filter === "todos") {
 
-
                 productSubtitle.textContent =
                     "Confira os produtos selecionados e acesse diretamente a Shopee.";
 
-
             } else {
-
 
                 const activeButton =
                     document.querySelector(
@@ -1082,9 +742,7 @@
                         '"]'
                     );
 
-
                 if (activeButton) {
-
 
                     productSubtitle.textContent =
                         "Produtos da categoria: " +
@@ -1098,18 +756,14 @@
             document
                 .getElementById("ofertas")
                 .scrollIntoView({
-
                     behavior: "smooth",
-
                     block: "start"
-
                 });
 
         }
 
 
         categoryButtons.forEach(function(button) {
-
 
             button.addEventListener(
                 "click",
@@ -1121,7 +775,6 @@
 
                 }
             );
-
 
         });
 
@@ -1135,10 +788,7 @@
             }
         );
 
-
     </script>
 
-
 </body>
-
 </html>
