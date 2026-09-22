@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Achadinhos Shopee | Ofertas e Produtos em Promoção</title>
-
-    <meta name="description" content="Encontre ofertas, achadinhos e produtos em promoção na Shopee. Confira nossas recomendações e ofertas do dia.">
-    <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos Shopee, promoções, produtos baratos, ofertas do dia">
-    <meta name="author" content="Achadinhos Shopee">
-
-    <meta property="og:title" content="Achadinhos Shopee">
-    <meta property="og:description" content="Os melhores achadinhos e ofertas da Shopee em um só lugar.">
-    <meta property="og:type" content="website">
+    <title>Achadinhos Shopee | Ofertas e Produtos</title>
+    <meta name="description" content="Encontre ofertas, achadinhos e produtos selecionados da Shopee em um só lugar.">
+    <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos, produtos baratos, promoções">
+    <meta name="robots" content="index, follow">
 
     <style>
         * {
@@ -27,29 +22,23 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
+            background: #f6f6f6;
             color: #222;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* HEADER */
         header {
             background: #ee4d2d;
             color: white;
+            padding: 18px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-        .topbar {
-            max-width: 1200px;
+        .header-content {
+            max-width: 1150px;
             margin: auto;
-            padding: 18px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -58,379 +47,151 @@
 
         .logo {
             font-size: 25px;
-            font-weight: 900;
+            font-weight: 800;
             white-space: nowrap;
-        }
-
-        .logo span {
-            color: #ffe600;
         }
 
         nav {
             display: flex;
             gap: 20px;
-            align-items: center;
         }
 
         nav a {
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.2s;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
         }
 
         nav a:hover {
-            color: #ffe600;
+            opacity: 0.8;
         }
 
-        /* HERO */
         .hero {
             background: linear-gradient(135deg, #ee4d2d, #ff733f);
             color: white;
-            padding: 65px 20px;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: auto;
             text-align: center;
+            padding: 75px 20px;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 6vw, 60px);
-            font-weight: 900;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 span {
-            color: #ffe600;
+            font-size: 42px;
+            margin-bottom: 15px;
         }
 
         .hero p {
+            font-size: 19px;
             max-width: 700px;
             margin: auto;
-            font-size: 19px;
             line-height: 1.6;
         }
 
-        .hero-button {
-            display: inline-block;
-            margin-top: 30px;
-            background: #fff;
-            color: #ee4d2d;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 900;
-            transition: 0.3s;
-        }
-
-        .hero-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        /* SEARCH */
-        .search-area {
-            max-width: 800px;
-            margin: -25px auto 35px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .search-box {
-            background: white;
-            border-radius: 40px;
-            padding: 7px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-            display: flex;
-        }
-
-        .search-box input {
-            width: 100%;
-            border: none;
-            outline: none;
-            padding: 14px 20px;
-            font-size: 16px;
-            border-radius: 40px;
-        }
-
-        .search-box button {
-            border: none;
-            background: #ee4d2d;
-            color: white;
-            border-radius: 30px;
-            padding: 0 25px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* CATEGORIES */
-        .categories {
-            max-width: 1200px;
-            margin: 0 auto 45px;
-            padding: 0 20px;
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 45px 20px;
         }
 
         .section-title {
             text-align: center;
+            margin-bottom: 12px;
             font-size: 30px;
-            margin-bottom: 25px;
-            font-weight: 900;
         }
 
-        .category-list {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        .empty-box {
+            background: white;
+            border-radius: 15px;
+            padding: 55px 25px;
+            text-align: center;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .empty-icon {
+            font-size: 55px;
+            margin-bottom: 18px;
+        }
+
+        .empty-box h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .empty-box p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 35px;
         }
 
         .category {
             background: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            font-weight: bold;
-            transition: 0.2s;
+            padding: 22px 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            font-weight: 700;
         }
 
-        .category:hover,
-        .category.active {
-            border-color: #ee4d2d;
-            color: #ee4d2d;
-        }
-
-        /* PRODUCTS */
-        .products-section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px 60px;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .product {
+        .about {
             background: white;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: 0.25s;
-            position: relative;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background: #eee;
-        }
-
-        .product-content {
-            padding: 17px;
-        }
-
-        .product-category {
-            color: #888;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .product h3 {
-            margin: 8px 0;
-            font-size: 17px;
-            line-height: 1.4;
-        }
-
-        .old-price {
-            color: #999;
-            text-decoration: line-through;
-            font-size: 13px;
-        }
-
-        .price {
-            color: #ee4d2d;
-            font-size: 25px;
-            font-weight: 900;
-            margin: 5px 0 15px;
-        }
-
-        .buy-button {
-            display: block;
-            background: #ee4d2d;
-            color: white;
-            text-align: center;
-            padding: 13px;
-            border-radius: 8px;
-            font-weight: 900;
-            transition: 0.2s;
-        }
-
-        .buy-button:hover {
-            background: #d83b20;
-        }
-
-        .discount {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: #ffe600;
-            color: #222;
-            padding: 6px 10px;
-            border-radius: 5px;
-            font-weight: 900;
-            font-size: 12px;
-        }
-
-        /* DESTAQUE */
-        .highlight {
-            background: white;
-            margin: 20px auto 50px;
-            max-width: 1160px;
-            border-radius: 18px;
             padding: 35px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
+            line-height: 1.8;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
         }
 
-        .highlight h2 {
-            color: #ee4d2d;
-            margin-bottom: 10px;
-            font-size: 30px;
-        }
-
-        .highlight p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* NO RESULTS */
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 50px;
-            color: #777;
-            font-size: 18px;
-        }
-
-        /* FOOTER */
         footer {
             background: #222;
             color: #ddd;
-            padding: 40px 20px;
             text-align: center;
+            padding: 30px 20px;
+            line-height: 1.7;
         }
 
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 900;
+        footer a {
             color: white;
-            margin-bottom: 15px;
         }
 
-        .footer-logo span {
-            color: #ee4d2d;
-        }
-
-        footer p {
-            max-width: 700px;
-            margin: 10px auto;
-            line-height: 1.6;
+        .disclosure {
             font-size: 13px;
             color: #aaa;
-        }
-
-        .affiliate-notice {
-            margin-top: 20px;
-            padding: 15px;
-            background: #2d2d2d;
-            border-radius: 10px;
-            font-size: 12px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 900px) {
-            .products {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            margin-top: 12px;
         }
 
         @media (max-width: 700px) {
-            .topbar {
+            .header-content {
                 flex-direction: column;
-                padding: 14px;
             }
 
             nav {
-                gap: 15px;
+                gap: 14px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            .hero {
-                padding: 45px 20px;
+            .hero h1 {
+                font-size: 32px;
             }
 
             .hero p {
-                font-size: 16px;
+                font-size: 17px;
             }
 
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .product-image {
-                height: 180px;
-            }
-
-            .product-content {
-                padding: 12px;
-            }
-
-            .product h3 {
-                font-size: 15px;
-            }
-
-            .price {
-                font-size: 21px;
-            }
-
-            .buy-button {
-                font-size: 13px;
-                padding: 11px 5px;
-            }
-        }
-
-        @media (max-width: 430px) {
-            .products {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .product-image {
-                height: 150px;
-            }
-
-            .logo {
-                font-size: 21px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .search-box button {
-                padding: 0 16px;
+            .container {
+                padding: 35px 15px;
             }
         }
     </style>
@@ -439,584 +200,82 @@
 <body>
 
 <header>
-    <div class="topbar">
-
-        <a href="#" class="logo">
-            🛍️ Achadinhos <span>Shopee</span>
-        </a>
+    <div class="header-content">
+        <div class="logo">🛍️ Achadinhos Shopee</div>
 
         <nav>
             <a href="#inicio">Início</a>
             <a href="#ofertas">Ofertas</a>
             <a href="#categorias">Categorias</a>
+            <a href="#sobre">Sobre</a>
         </nav>
-
     </div>
 </header>
 
-
 <section class="hero" id="inicio">
+    <h1>Os melhores achadinhos em um só lugar</h1>
+    <p>
+        Produtos selecionados da Shopee, ofertas e achadinhos para você encontrar
+        o que procura de forma simples e rápida.
+    </p>
+</section>
 
-    <div class="hero-content">
+<section class="container" id="ofertas">
+    <h2 class="section-title">🔥 Ofertas</h2>
+    <p class="section-subtitle">
+        Em breve, produtos selecionados com preço, imagem e link direto para a Shopee.
+    </p>
 
-        <h1>
-            Os melhores <span>achadinhos</span>
-        </h1>
-
+    <div class="empty-box">
+        <div class="empty-icon">🛒</div>
+        <h3>Nossas ofertas estão sendo preparadas</h3>
         <p>
-            Encontre produtos incríveis, ofertas e promoções da Shopee
-            selecionados especialmente para você.
+            Ainda não há produtos publicados. Em breve você encontrará aqui
+            os produtos selecionados, com seus respectivos preços e links.
+        </p>
+    </div>
+</section>
+
+<section class="container" id="categorias">
+    <h2 class="section-title">📦 Categorias</h2>
+    <p class="section-subtitle">Navegue pelas categorias de produtos.</p>
+
+    <div class="categories">
+        <div class="category">📱 Eletrônicos</div>
+        <div class="category">🏠 Casa</div>
+        <div class="category">👕 Moda</div>
+        <div class="category">💄 Beleza</div>
+        <div class="category">🎮 Games</div>
+        <div class="category">🚗 Automotivo</div>
+    </div>
+</section>
+
+<section class="container" id="sobre">
+    <h2 class="section-title">ℹ️ Sobre o site</h2>
+
+    <div class="about">
+        <p>
+            Este site reúne produtos e ofertas encontrados na Shopee para facilitar
+            a busca por bons produtos e preços.
         </p>
 
-        <a href="#ofertas" class="hero-button">
-            🔥 VER OFERTAS
-        </a>
-
+        <p>
+            Os produtos serão adicionados individualmente com foto, nome,
+            descrição, preço e um botão que levará você diretamente para a página
+            do produto na Shopee.
+        </p>
     </div>
-
 </section>
-
-
-<div class="search-area">
-
-    <div class="search-box">
-
-        <input
-            type="text"
-            id="search"
-            placeholder="🔎 Procurar produto..."
-            onkeyup="searchProducts()"
-        >
-
-        <button onclick="searchProducts()">
-            Buscar
-        </button>
-
-    </div>
-
-</div>
-
-
-<section class="categories" id="categorias">
-
-    <h2 class="section-title">
-        🛍️ Categorias
-    </h2>
-
-    <div class="category-list">
-
-        <div class="category active" onclick="filterCategory('todos', this)">
-            Todos
-        </div>
-
-        <div class="category" onclick="filterCategory('eletronicos', this)">
-            📱 Eletrônicos
-        </div>
-
-        <div class="category" onclick="filterCategory('casa', this)">
-            🏠 Casa
-        </div>
-
-        <div class="category" onclick="filterCategory('moda', this)">
-            👕 Moda
-        </div>
-
-        <div class="category" onclick="filterCategory('games', this)">
-            🎮 Games
-        </div>
-
-        <div class="category" onclick="filterCategory('acessorios', this)">
-            🎧 Acessórios
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="products-section" id="ofertas">
-
-    <h2 class="section-title">
-        🔥 Ofertas em destaque
-    </h2>
-
-    <div class="products" id="products">
-
-
-        <!-- PRODUTO 1 -->
-        <article class="product" data-category="eletronicos">
-
-            <span class="discount">OFERTA</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
-                alt="Fone de ouvido Bluetooth"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Eletrônicos
-                </div>
-
-                <h3>
-                    Fone Bluetooth Sem Fio
-                </h3>
-
-                <div class="old-price">
-                    R$ 99,90
-                </div>
-
-                <div class="price">
-                    R$ 39,90
-                </div>
-
-                <!-- TROQUE O LINK ABAIXO PELO SEU LINK DE AFILIADO -->
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 2 -->
-        <article class="product" data-category="eletronicos">
-
-            <span class="discount">-40%</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
-                alt="Smartwatch"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Eletrônicos
-                </div>
-
-                <h3>
-                    Smartwatch Inteligente
-                </h3>
-
-                <div class="old-price">
-                    R$ 149,90
-                </div>
-
-                <div class="price">
-                    R$ 89,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 3 -->
-        <article class="product" data-category="casa">
-
-            <span class="discount">OFERTA</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80"
-                alt="Produto para cozinha"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Casa
-                </div>
-
-                <h3>
-                    Organizador para Cozinha
-                </h3>
-
-                <div class="old-price">
-                    R$ 69,90
-                </div>
-
-                <div class="price">
-                    R$ 29,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 4 -->
-        <article class="product" data-category="moda">
-
-            <span class="discount">-35%</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80"
-                alt="Moda masculina"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Moda
-                </div>
-
-                <h3>
-                    Camiseta Casual
-                </h3>
-
-                <div class="old-price">
-                    R$ 79,90
-                </div>
-
-                <div class="price">
-                    R$ 49,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 5 -->
-        <article class="product" data-category="games">
-
-            <span class="discount">OFERTA</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=600&q=80"
-                alt="Controle para videogame"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Games
-                </div>
-
-                <h3>
-                    Controle para Videogame
-                </h3>
-
-                <div class="old-price">
-                    R$ 159,90
-                </div>
-
-                <div class="price">
-                    R$ 99,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 6 -->
-        <article class="product" data-category="acessorios">
-
-            <span class="discount">-30%</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&w=600&q=80"
-                alt="Acessórios para celular"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Acessórios
-                </div>
-
-                <h3>
-                    Kit de Acessórios para Celular
-                </h3>
-
-                <div class="old-price">
-                    R$ 59,90
-                </div>
-
-                <div class="price">
-                    R$ 34,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 7 -->
-        <article class="product" data-category="casa">
-
-            <span class="discount">OFERTA</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=600&q=80"
-                alt="Produto para casa"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Casa
-                </div>
-
-                <h3>
-                    Organizador Multiuso
-                </h3>
-
-                <div class="old-price">
-                    R$ 49,90
-                </div>
-
-                <div class="price">
-                    R$ 24,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 8 -->
-        <article class="product" data-category="eletronicos">
-
-            <span class="discount">-45%</span>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80"
-                alt="Fone de ouvido"
-            >
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    Eletrônicos
-                </div>
-
-                <h3>
-                    Fone de Ouvido Compacto
-                </h3>
-
-                <div class="old-price">
-                    R$ 89,90
-                </div>
-
-                <div class="price">
-                    R$ 44,90
-                </div>
-
-                <a
-                    href="SEU-LINK-DE-AFILIADO-SHOPEE"
-                    target="_blank"
-                    rel="nofollow sponsored noopener"
-                    class="buy-button"
-                >
-                    🛒 COMPRAR NA SHOPEE
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-
-    <div class="no-results" id="noResults">
-        😕 Nenhum produto encontrado.
-    </div>
-
-</section>
-
-
-<div class="highlight">
-
-    <h2>🔥 Achadinhos todos os dias</h2>
-
-    <p>
-        Estamos sempre procurando produtos interessantes e ofertas
-        para você. Salve nosso site e volte para conferir as novidades!
-    </p>
-
-</div>
-
 
 <footer>
+    <p>© 2026 Achadinhos Shopee — Todos os direitos reservados.</p>
 
-    <div class="footer-logo">
-        🛍️ Achadinhos <span>Shopee</span>
-    </div>
-
-    <p>
-        Ofertas, produtos e recomendações selecionadas para você.
+    <p class="disclosure">
+        Este site pode participar do programa de afiliados da Shopee.
+        Alguns links podem gerar comissão ao site quando uma compra é realizada,
+        sem custo adicional para o comprador.
     </p>
-
-    <div class="affiliate-notice">
-        <strong>Aviso:</strong>
-        Este site pode participar do Programa de Afiliados da Shopee.
-        Alguns links presentes nesta página são links de afiliado.
-        Podemos receber uma comissão quando uma compra elegível é realizada
-        através desses links, sem custo adicional para você.
-    </div>
-
-    <p>
-        © 2026 Achadinhos Shopee — Todos os direitos reservados.
-    </p>
-
 </footer>
-
-
-<script>
-
-    /* PESQUISA */
-
-    function searchProducts() {
-
-        const search =
-            document.getElementById("search")
-            .value
-            .toLowerCase()
-            .trim();
-
-        const products =
-            document.querySelectorAll(".product");
-
-        let found = 0;
-
-        products.forEach(product => {
-
-            const text =
-                product.innerText.toLowerCase();
-
-            if (text.includes(search)) {
-
-                product.style.display = "";
-
-                found++;
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        });
-
-        document.getElementById("noResults").style.display =
-            found === 0 ? "block" : "none";
-    }
-
-
-    /* FILTRO DE CATEGORIAS */
-
-    function filterCategory(category, element) {
-
-        document
-            .querySelectorAll(".category")
-            .forEach(item => item.classList.remove("active"));
-
-        element.classList.add("active");
-
-        const products =
-            document.querySelectorAll(".product");
-
-        let found = 0;
-
-        products.forEach(product => {
-
-            if (
-                category === "todos" ||
-                product.dataset.category === category
-            ) {
-
-                product.style.display = "";
-
-                found++;
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        });
-
-        document.getElementById("noResults").style.display =
-            found === 0 ? "block" : "none";
-
-        document.getElementById("search").value = "";
-    }
-
-</script>
 
 </body>
 </html>
