@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Achadinhos Shopee | Ofertas e Produtos</title>
+
     <meta name="description" content="Encontre ofertas, achadinhos e produtos selecionados da Shopee em um só lugar.">
     <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos, produtos baratos, promoções">
     <meta name="robots" content="index, follow">
@@ -26,6 +27,10 @@
             color: #222;
         }
 
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             background: #ee4d2d;
             color: white;
@@ -33,7 +38,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
         .header-content {
@@ -60,11 +65,16 @@
             color: white;
             text-decoration: none;
             font-weight: 600;
+            transition: opacity 0.2s;
         }
 
         nav a:hover {
             opacity: 0.8;
         }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             background: linear-gradient(135deg, #ee4d2d, #ff733f);
@@ -85,6 +95,10 @@
             line-height: 1.6;
         }
 
+        /* =========================
+           CONTAINER
+        ========================= */
+
         .container {
             max-width: 1150px;
             margin: auto;
@@ -104,12 +118,16 @@
             font-size: 16px;
         }
 
+        /* =========================
+           OFERTAS VAZIAS
+        ========================= */
+
         .empty-box {
             background: white;
             border-radius: 15px;
             padding: 55px 25px;
             text-align: center;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
             max-width: 800px;
             margin: auto;
         }
@@ -129,6 +147,10 @@
             line-height: 1.7;
         }
 
+        /* =========================
+           CATEGORIAS
+        ========================= */
+
         .categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -141,17 +163,35 @@
             padding: 22px 15px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
             font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
+        .category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+        }
+
+        /* =========================
+           SOBRE
+        ========================= */
 
         .about {
             background: white;
             border-radius: 15px;
             padding: 35px;
             line-height: 1.8;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
         }
+
+        .about p + p {
+            margin-top: 15px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #222;
@@ -169,9 +209,17 @@
             font-size: 13px;
             color: #aaa;
             margin-top: 12px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* =========================
+           CELULAR
+        ========================= */
+
         @media (max-width: 700px) {
+
             .header-content {
                 flex-direction: column;
             }
@@ -180,6 +228,14 @@
                 gap: 14px;
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero {
+                padding: 60px 20px;
             }
 
             .hero h1 {
@@ -193,89 +249,191 @@
             .container {
                 padding: 35px 15px;
             }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .about {
+                padding: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-content">
-        <div class="logo">🛍️ Achadinhos Shopee</div>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#ofertas">Ofertas</a>
-            <a href="#categorias">Categorias</a>
-            <a href="#sobre">Sobre</a>
-        </nav>
-    </div>
-</header>
+    <header>
 
-<section class="hero" id="inicio">
-    <h1>Os melhores achadinhos em um só lugar</h1>
-    <p>
-        Produtos selecionados da Shopee, ofertas e achadinhos para você encontrar
-        o que procura de forma simples e rápida.
-    </p>
-</section>
+        <div class="header-content">
 
-<section class="container" id="ofertas">
-    <h2 class="section-title">🔥 Ofertas</h2>
-    <p class="section-subtitle">
-        Em breve, produtos selecionados com preço, imagem e link direto para a Shopee.
-    </p>
+            <div class="logo">
+                🛍️ Achadinhos Shopee
+            </div>
 
-    <div class="empty-box">
-        <div class="empty-icon">🛒</div>
-        <h3>Nossas ofertas estão sendo preparadas</h3>
-        <p>
-            Ainda não há produtos publicados. Em breve você encontrará aqui
-            os produtos selecionados, com seus respectivos preços e links.
-        </p>
-    </div>
-</section>
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
 
-<section class="container" id="categorias">
-    <h2 class="section-title">📦 Categorias</h2>
-    <p class="section-subtitle">Navegue pelas categorias de produtos.</p>
+        </div>
 
-    <div class="categories">
-        <div class="category">📱 Eletrônicos</div>
-        <div class="category">🏠 Casa</div>
-        <div class="category">👕 Moda</div>
-        <div class="category">💄 Beleza</div>
-        <div class="category">🎮 Games</div>
-        <div class="category">🚗 Automotivo</div>
-    </div>
-</section>
+    </header>
 
-<section class="container" id="sobre">
-    <h2 class="section-title">ℹ️ Sobre o site</h2>
 
-    <div class="about">
-        <p>
-            Este site reúne produtos e ofertas encontrados na Shopee para facilitar
-            a busca por bons produtos e preços.
-        </p>
+    <!-- =========================
+         INÍCIO
+    ========================= -->
+
+    <section class="hero" id="inicio">
+
+        <h1>
+            Os melhores achadinhos em um só lugar
+        </h1>
 
         <p>
-            Os produtos serão adicionados individualmente com foto, nome,
-            descrição, preço e um botão que levará você diretamente para a página
-            do produto na Shopee.
+            Produtos selecionados da Shopee, ofertas e achadinhos
+            para você encontrar o que procura de forma simples e rápida.
         </p>
-    </div>
-</section>
 
-<footer>
-    <p>© 2026 Achadinhos Shopee — Todos os direitos reservados.</p>
+    </section>
 
-    <p class="disclosure">
-        Este site pode participar do programa de afiliados da Shopee.
-        Alguns links podem gerar comissão ao site quando uma compra é realizada,
-        sem custo adicional para o comprador.
-    </p>
-</footer>
+
+    <!-- =========================
+         OFERTAS
+    ========================= -->
+
+    <section class="container" id="ofertas">
+
+        <h2 class="section-title">
+            🔥 Ofertas
+        </h2>
+
+        <p class="section-subtitle">
+            Em breve, produtos selecionados com preço,
+            imagem e link direto para a Shopee.
+        </p>
+
+
+        <div class="empty-box">
+
+            <div class="empty-icon">
+                🛒
+            </div>
+
+            <h3>
+                Nossas ofertas estão sendo preparadas
+            </h3>
+
+            <p>
+                Ainda não há produtos publicados.
+                Em breve você encontrará aqui os produtos selecionados,
+                com seus respectivos preços e links.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIAS
+    ========================= -->
+
+    <section class="container" id="categorias">
+
+        <h2 class="section-title">
+            📦 Categorias
+        </h2>
+
+        <p class="section-subtitle">
+            Navegue pelas categorias de produtos.
+        </p>
+
+
+        <div class="categories">
+
+            <div class="category">
+                📱 Eletrônicos
+            </div>
+
+            <div class="category">
+                🏠 Casa
+            </div>
+
+            <div class="category">
+                👕 Moda
+            </div>
+
+            <div class="category">
+                💄 Beleza
+            </div>
+
+            <div class="category">
+                🎮 Games
+            </div>
+
+            <div class="category">
+                🚗 Automotivo
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE
+    ========================= -->
+
+    <section class="container" id="sobre">
+
+        <h2 class="section-title">
+            ℹ️ Sobre o site
+        </h2>
+
+
+        <div class="about">
+
+            <p>
+                Este site reúne produtos e ofertas encontrados
+                na Shopee para facilitar a busca por bons produtos e preços.
+            </p>
+
+            <p>
+                Os produtos serão adicionados individualmente com foto,
+                nome, descrição, preço e um botão que levará você
+                diretamente para a página do produto na Shopee.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Achadinhos Shopee — Todos os direitos reservados.
+        </p>
+
+        <p class="disclosure">
+            Este site pode participar do programa de afiliados da Shopee.
+            Alguns links podem gerar comissão ao site quando uma compra
+            é realizada, sem custo adicional para o comprador.
+        </p>
+
+    </footer>
 
 </body>
 </html>
