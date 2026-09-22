@@ -7,7 +7,7 @@
     <title>Achadinhos Shopee | Ofertas e Produtos</title>
 
     <meta name="description" content="Encontre ofertas, achadinhos e produtos selecionados da Shopee em um só lugar.">
-    <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos, produtos baratos, promoções">
+    <meta name="keywords" content="Shopee, ofertas Shopee, achadinhos, produtos baratos, promoções, som automotivo, ferramentas, eletrônicos">
     <meta name="robots" content="index, follow">
 
     <style>
@@ -119,7 +119,7 @@
         }
 
         /* =========================
-           OFERTAS VAZIAS
+           OFERTAS
         ========================= */
 
         .empty-box {
@@ -153,7 +153,7 @@
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 15px;
             margin-top: 35px;
         }
@@ -166,6 +166,7 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
             font-weight: 700;
             transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
 
         .category:hover {
@@ -256,6 +257,23 @@
 
             .about {
                 padding: 25px;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .category {
+                padding: 18px 10px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .categories {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -353,7 +371,7 @@
         </h2>
 
         <p class="section-subtitle">
-            Navegue pelas categorias de produtos.
+            Encontre produtos separados por categoria.
         </p>
 
 
@@ -364,7 +382,43 @@
             </div>
 
             <div class="category">
+                🖥️ Informática
+            </div>
+
+            <div class="category">
+                📲 Celulares e Acessórios
+            </div>
+
+            <div class="category">
+                🔊 Som Automotivo
+            </div>
+
+            <div class="category">
+                🚗 Automotivo
+            </div>
+
+            <div class="category">
+                🏍️ Motos
+            </div>
+
+            <div class="category">
+                🔧 Ferramentas
+            </div>
+
+            <div class="category">
+                🛠️ Ferramentas de Precisão
+            </div>
+
+            <div class="category">
                 🏠 Casa
+            </div>
+
+            <div class="category">
+                🍳 Cozinha
+            </div>
+
+            <div class="category">
+                🧹 Organização e Limpeza
             </div>
 
             <div class="category">
@@ -376,11 +430,43 @@
             </div>
 
             <div class="category">
+                👶 Infantil
+            </div>
+
+            <div class="category">
+                🧸 Brinquedos
+            </div>
+
+            <div class="category">
                 🎮 Games
             </div>
 
             <div class="category">
-                🚗 Automotivo
+                💡 Iluminação
+            </div>
+
+            <div class="category">
+                🏗️ Construção
+            </div>
+
+            <div class="category">
+                🐶 Pet
+            </div>
+
+            <div class="category">
+                ⚽ Esportes
+            </div>
+
+            <div class="category">
+                🎣 Pesca
+            </div>
+
+            <div class="category">
+                🎒 Acessórios
+            </div>
+
+            <div class="category">
+                💰 Ofertas e Promoções
             </div>
 
         </div>
@@ -410,6 +496,11 @@
                 Os produtos serão adicionados individualmente com foto,
                 nome, descrição, preço e um botão que levará você
                 diretamente para a página do produto na Shopee.
+            </p>
+
+            <p>
+                Nosso objetivo é reunir achadinhos e ofertas de diferentes
+                categorias em um único lugar, facilitando a sua pesquisa.
             </p>
 
         </div>
