@@ -41,10 +41,10 @@
         }
 
         .header-inner {
-            max-width: 1180px;
+            max-width: 1280px;
             min-height: 72px;
             margin: auto;
-            padding: 12px 22px;
+            padding: 12px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -57,11 +57,75 @@
             font-weight: 900;
             letter-spacing: -.4px;
             white-space: nowrap;
-            margin-left: 2px;
+            margin-left: 0;
         }
 
         .logo span {
             color: #ff4d1f;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            width: 240px;
+            height: 42px;
+            padding: 0 48px 0 16px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 22px;
+            outline: none;
+            background: rgba(255,255,255,.06);
+            color: #fff;
+            font-size: 13px;
+            transition: .25s;
+        }
+
+        .search-box input::placeholder {
+            color: #89939f;
+        }
+
+        .search-box input:focus {
+            border-color: rgba(255,77,31,.65);
+            background: rgba(255,255,255,.09);
+            box-shadow: 0 0 0 3px rgba(255,77,31,.08);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 5px;
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 50%;
+            background: #ff4d1f;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .2s;
+        }
+
+        .search-button:hover {
+            background: #e94319;
+            transform: scale(1.05);
+        }
+
+        .search-button svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            fill: none;
         }
 
         nav {
@@ -369,11 +433,30 @@
                 min-height: auto;
                 padding: 12px 15px;
                 flex-direction: column;
-                gap: 8px;
+                align-items: stretch;
+                gap: 10px;
             }
 
             .logo {
                 font-size: 19px;
+                margin-left: 2px;
+            }
+
+            .header-right {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .search-box {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .search-box input {
+                width: min(100%, 340px);
             }
 
             nav {
@@ -423,11 +506,23 @@
     <div class="header-inner">
         <a href="#inicio" class="logo">🔊 <span>SomAuto</span> Ofertas</a>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#ofertas">Ofertas</a>
-            <a href="#sobre">Sobre</a>
-        </nav>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="search" id="searchInput" placeholder="Pesquisar produto..." aria-label="Pesquisar produto">
+                <button class="search-button" id="searchButton" aria-label="Pesquisar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+        </div>
     </div>
 </header>
 
@@ -550,6 +645,34 @@
     <p>© 2026 SomAuto Ofertas - Promoções de Som Automotivo.</p>
     <p>Este site participa de programas de afiliados e pode receber comissão por compras realizadas através dos links.</p>
 </footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const productCard = document.querySelector(".product-card");
+
+function pesquisarProduto() {
+    const termo = searchInput.value.trim().toLowerCase();
+    const textoProduto = productCard ? productCard.innerText.toLowerCase() : "";
+
+    if (!termo || textoProduto.includes(termo)) {
+        if (productCard) productCard.style.display = "";
+        return;
+    }
+
+    if (productCard) productCard.style.display = "none";
+}
+
+searchButton.addEventListener("click", pesquisarProduto);
+
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") pesquisarProduto();
+});
+
+searchInput.addEventListener("input", function() {
+    if (!this.value.trim() && productCard) productCard.style.display = "";
+});
+</script>
 
 </body>
 </html>
